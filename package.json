@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "SET NODE_ENV=dev && node ./bin/www",
+    "start": "node ./bin/www",
     "test": "mocha --timeout 10000"
   },
   "dependencies": {
