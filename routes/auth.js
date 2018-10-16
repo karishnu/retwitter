@@ -9,6 +9,10 @@ router.use(function (req, res, next) {
     next();
 });
 
+/*
+    REGISTER USER
+ */
+
 router.post('/save', function (req, res, next) {
 
     var member = new Member(req.body);
@@ -25,6 +29,10 @@ router.post('/save', function (req, res, next) {
         }
     });
 });
+
+/*
+    LOGIN USER
+ */
 
 router.post('/login', function (req, res) {
     authenticate.authenticate(req, res);

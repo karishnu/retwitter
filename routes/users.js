@@ -20,6 +20,10 @@ router.use(function (req, res, next) {
     }
 });
 
+/*
+    FOLLOW A USER
+ */
+
 router.post('/follow', function (req, res, next) {
     const user_to_follow = req.query._id;
 
@@ -39,6 +43,11 @@ router.post('/follow', function (req, res, next) {
         }
     })
 });
+
+/*
+    UNFOLLOW A USER
+ */
+
 
 router.post('/unfollow', function (req, res, next) {
     const user_to_unfollow = req.query._id;

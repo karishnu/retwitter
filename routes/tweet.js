@@ -22,6 +22,10 @@ router.use(function (req, res, next) {
     }
 });
 
+/*
+    GET A CUSTOMIZED LIST OF TWEETS ACCORDING TO WHO THE USER FOLLOWS
+ */
+
 router.get('/feed', function (req, res, next) {
     User.findOne({username: req.decoded.username}, function (error_user, user) {
 
@@ -41,6 +45,10 @@ router.get('/feed', function (req, res, next) {
     });
 });
 
+/*
+    GET A SINGLE TWEET BY _ID
+ */
+
 router.get('/', function (req, res, next) {
     Tweet.findOne({_id: req.query._id}, function (error, tweet) {
         if(error){
@@ -52,6 +60,10 @@ router.get('/', function (req, res, next) {
     })
 });
 
+/*
+    LIKE A SINGLE TWEET
+ */
+
 router.post('/like', function (req, res, next) {
     Tweet.findOneAndUpdate({_id: req.query._id}, {$addToSet: {likes: req.decoded._id}}, function (error, tweet) {
         if(error){
@@ -62,6 +74,16 @@ router.post('/like', function (req, res, next) {
         }
     })
 });
+
+/*
+    POST A NEW TWEET
+
+    There are three kinds of tweets - tweet, retweet, reply
+
+    Tweet - Basic text tweet
+    Retweet - Basic text tweet with assoc_tweet mentioned
+    Reply - Basic text tweet with assoc_tweet mentioned and can be threaded in the frontend
+ */
 
 router.post('/', function (req, res, next) {
 
@@ -88,6 +110,10 @@ router.post('/', function (req, res, next) {
         }
     });
 });
+
+/*
+    DELETE A SINGLE TWEET
+ */
 
 router.delete('/', function (req, res, next) {
 
