@@ -1,0 +1,26 @@
+{
+  "name": "retwitter",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "SET NODE_ENV=dev && node ./bin/www",
+    "test": "mocha --timeout 10000"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.3.4",
+    "morgan": "~1.9.0",
+    "rand-token": "^0.4.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "mocha": "^2.4.5"
+  }
+}
