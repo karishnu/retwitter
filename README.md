@@ -1,4 +1,4 @@
 # retwitter
 
 # API for a Twitter clone
-# Developed for as an interview task
+# Developed as an interview task
